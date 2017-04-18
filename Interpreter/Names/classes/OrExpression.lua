@@ -4,7 +4,8 @@ OrExpression={}
 
 function OrExpression:new(newExpr1, newExpr2)
     local this = display.newGroup()
-    local private={}
+    local public = this
+    local private = {}
     local expr1 = newExpr1
     local expr2 = newExpr2
 
@@ -12,12 +13,11 @@ function OrExpression:new(newExpr1, newExpr2)
 
     end
 
-    function this.interpret(context)
+    function public.interpret(context)
         return expr1.interpret(context) or expr2.interpret(context)
     end
 
-
-    function this:destroy()
+    function public:destroy()
         this:removeSelf()
         this = nil
     end

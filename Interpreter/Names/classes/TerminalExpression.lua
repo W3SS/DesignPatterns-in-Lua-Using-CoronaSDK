@@ -4,13 +4,15 @@ TerminalExpression={}
 
 function TerminalExpression:new(newData)
     local this = display.newGroup()
-    local private={}
+    local public = this
+    local private = {}
     local data = newData
 
     function private.TerminalExpression()
 
     end
-    function this.interpret(context)
+
+    function public.interpret(context)
         if string.match(context, data) then
             return true
         else
@@ -18,7 +20,7 @@ function TerminalExpression:new(newData)
         end
     end
 
-    function this:destroy()
+    function public:destroy()
         this:removeSelf()
         this = nil
     end

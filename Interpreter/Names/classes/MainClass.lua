@@ -7,7 +7,8 @@ MainClass={}
 
 function MainClass:new()
     local this = display.newGroup()
-    local private={}
+    local public = this
+    local private = {}
     local isMale
 
     function private.MainClass()
@@ -19,7 +20,7 @@ function MainClass:new()
     end
 
     --Rule: Robert and John are male
-    function this.getMaleExpression()
+    function public.getMaleExpression()
         local robert = TerminalExpression:new("Robert")
         local john = TerminalExpression:new("John")
 
@@ -27,7 +28,7 @@ function MainClass:new()
     end
 
     --Rule: Julie is a married woman
-    function this.getMarriedWomanExpression()
+    function public.getMarriedWomanExpression()
         local julie = TerminalExpression:new("Julie")
         local married = TerminalExpression:new("Married")
 

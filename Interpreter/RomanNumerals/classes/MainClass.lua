@@ -9,7 +9,8 @@ MainClass={}
 
 function MainClass:new()
     local this = display.newGroup()
-    local private={}
+    local public = this
+    local private = {}
     local roman = "MCMXXVIII"
     local context = Context:new(roman)
     local tree = {

@@ -4,7 +4,8 @@ Context={}
 
 function Context:new(inputStr)
     local this = display.newGroup()
-    local private={}
+    local public = this
+    local private = {}
     local input = inputStr --string
     local output = 0 --int
 
@@ -12,27 +13,27 @@ function Context:new(inputStr)
 
     end
 
-    function this.getInput()
+    function public.getInput()
         return input
     end
 
-    function this.setInput(inputS)
+    function public.setInput(inputS)
         input = inputS
     end
 
-    function this.getOutput()
+    function public.getOutput()
         return output
     end
 
-    function this.setOutput(outputI)
+    function public.setOutput(outputI)
         output = outputI
     end
 
-    function this.startsWith(str)
+    function public.startsWith(str)
         return this.getInput():sub(1, #str)  == str
     end
 
-    function this:destroy()
+    function public:destroy()
         this:removeSelf()
         this = nil
     end
