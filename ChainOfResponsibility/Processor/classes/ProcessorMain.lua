@@ -12,8 +12,8 @@ function ProcessorMain:new()
 
     end
 
-    function public.setNext(next)
-        this.next = next
+    function public.setNext(newNext)
+        next = newNext
     end
 
     function private.checkIfFree()
