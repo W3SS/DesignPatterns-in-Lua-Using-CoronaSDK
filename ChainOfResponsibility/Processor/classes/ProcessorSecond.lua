@@ -6,17 +6,18 @@ function ProcessorSecond:new()
     local this = display.newGroup()
     local public = this
     local private = {}
+    local next
 
     function private.ProcessorSecond()
 
     end
 
-    function public.setNext(next)
-        this.next = next
+    function public.setNext(newNext)
+        next = newNext
     end
 
     function private.checkIfFree()
-        return true--new Random().next(2) == 0
+        return math.random(0, 2) == 0
     end
 
     function private.goNext(data)
