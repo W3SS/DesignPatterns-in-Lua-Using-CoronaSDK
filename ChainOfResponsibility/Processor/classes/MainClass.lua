@@ -16,7 +16,7 @@ function MainClass:new()
 
     function private.MainClass()
         mainProcessor.setNext(secondProcessor)
-        secondProcessor.setNext(secondProcessor)
+        secondProcessor.setNext(thirdProcessor)
 
         mainProcessor.execute("any data here")
     end
