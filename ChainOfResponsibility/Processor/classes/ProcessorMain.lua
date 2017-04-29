@@ -17,7 +17,7 @@ function ProcessorMain:new()
     end
 
     function private.checkIfFree()
-        return true--new Random().next(2) == 0
+        return math.random(0, 2) == 0
     end
 
     function private.goNext(data)
